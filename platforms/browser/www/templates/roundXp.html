@@ -1,0 +1,49 @@
+<ion-view title="RoundXp" hide-back-button="true" id="page1">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-information-circled" onclick="window.location.href='#/about'"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <form id="roundXp-form" name="XP" class="list">
+      <label class="item item-input" id="roundXp-input1">
+        <span class="input-label">Actual</span>
+        <input name="current" type="number" placeholder="" ng-maxlength="12" ng-model="current.value" required>
+      </label>
+      <label class="item item-input" id="roundXp-input2">
+        <span class="input-label">Objectif</span>
+        <input type="number" placeholder="" ng-maxlength="12" ng-model="target.value">
+      </label>
+    </form>
+    <button id="roundXp-button1" class="button button-positive button-block icon-left ion-ios-calculator" ng-click="calculate()">Calculate</button>
+    <div id="roundXp-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">You need
+        <!-- <strong>{{target.value-current.value < 0 ? '0' : target.value-current.value}}</strong> more xp.</p> -->
+        <strong>{{xp()}}</strong> more xp. </br>{{display()}}</p>
+        <div role="alert">
+    <span class="error" ng-show="XP.current.$error.maxlength">
+      Required!</span>
+    <span class="error" ng-show="XP.current.$error.number">
+      Not valid number!</span>
+  </div>
+    </div>
+    <ion-list id="roundXp-list1">
+      <ion-item class="item-divider" id="roundXp-list-item-divider1">Shortest solution</ion-item>
+      <ion-item id="roundXp-list-item4"> Item 1
+        <span class="item-note">x3</span>
+        <ion-option-button class="button-positive">About</ion-option-button>
+      </ion-item>
+      <ion-item class="item-icon-right" id="roundXp-list-item5">Item 2
+        <span class="item-note">x7</span>
+        <i class="icon ion-ionic icon-accessory"></i>
+        <ion-option-button class="button-positive">About</ion-option-button>
+      </ion-item>
+      <ion-item class="item-icon-right" id="roundXp-list-item6">Item 3
+        <i class="icon ion-ios-ionic-outline icon-accessory"></i>
+        <ion-option-button class="button-positive">About</ion-option-button>
+      </ion-item>
+      <ion-item class="item-icon-left" id="roundXp-list-item9">
+        <i class="icon ion-ionic"></i>Item
+        <ion-option-button class="button-positive">About</ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
